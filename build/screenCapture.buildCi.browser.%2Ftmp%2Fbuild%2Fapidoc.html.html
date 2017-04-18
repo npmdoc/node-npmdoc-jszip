@@ -56,6 +56,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.jszip.jszip">
+            function <span class="apidocSignatureSpan"></span>jszip
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.jszip.compressedObject">
             function <span class="apidocSignatureSpan">jszip.</span>compressedObject
             <span class="apidocSignatureSpan">(compressedSize, uncompressedSize, crc32, compression, data)</span>
@@ -65,9 +74,45 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.jszip.crc32">
+            function <span class="apidocSignatureSpan">jszip.</span>crc32
+            <span class="apidocSignatureSpan">(input, crc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jszip.external.Promise">
+            function <span class="apidocSignatureSpan">jszip.</span>external.Promise
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jszip.load">
+            function <span class="apidocSignatureSpan">jszip.</span>load
+            <span class="apidocSignatureSpan">(data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.jszip.loadAsync">
             function <span class="apidocSignatureSpan">jszip.</span>loadAsync
             <span class="apidocSignatureSpan">(content, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jszip.toString">
+            function <span class="apidocSignatureSpan">jszip.</span>toString
+            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -245,11 +290,37 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.jszip.crc32">module jszip.crc32</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jszip.crc32.crc32">
+            function <span class="apidocSignatureSpan">jszip.</span>crc32
+            <span class="apidocSignatureSpan">(input, crc)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
     <li class="apidocModuleLi"><a href="#apidoc.module.jszip.external">module jszip.external</a><ol>
 
         <li>
 
             <a class="apidocElementLiA" href="#apidoc.element.jszip.external.Promise">
+            function <span class="apidocSignatureSpan">jszip.external.</span>Promise
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jszip.external.Promise">module jszip.external.Promise</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jszip.external.Promise.Promise">
             function <span class="apidocSignatureSpan">jszip.external.</span>Promise
             <span class="apidocSignatureSpan">()</span>
             </a>
@@ -286,6 +357,32 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.jszip.load">module jszip.load</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jszip.load.load">
+            function <span class="apidocSignatureSpan">jszip.</span>load
+            <span class="apidocSignatureSpan">(data, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jszip.loadAsync">module jszip.loadAsync</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jszip.loadAsync.loadAsync">
+            function <span class="apidocSignatureSpan">jszip.</span>loadAsync
+            <span class="apidocSignatureSpan">(content, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
     <li class="apidocModuleLi"><a href="#apidoc.module.jszip.nodejsUtils">module jszip.nodejsUtils</a><ol>
 
         <li>
@@ -317,6 +414,19 @@
             <a class="apidocElementLiA" href="#apidoc.element.jszip.nodejsUtils.newBuffer">
             function <span class="apidocSignatureSpan">jszip.nodejsUtils.</span>newBuffer
             <span class="apidocSignatureSpan">(data, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jszip.toString">module jszip.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jszip.toString.toString">
+            function <span class="apidocSignatureSpan">jszip.</span>toString
+            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -797,6 +907,49 @@
 
 
     <h2>
+        <a href="#apidoc.element.jszip.jszip" id="apidoc.element.jszip.jszip">
+        function <span class="apidocSignatureSpan"></span>jszip
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSZip() {
+    // if this constructor isÂ&nbsp;used withoutÂ&nbsp;`new`, itÂ&nbsp;adds `new` beforeÂ&nbsp;itself:
+    if(!(this instanceof JSZip)) {
+        return new JSZip();
+    }
+
+    if(arguments.length) {
+        throw new Error("The constructor with parameters has been removed in JSZip 3.0, please check the upgrade guide.");
+    }
+
+    // object containing the files :
+    // {
+    //   "folder/" : {...},
+    //   "folder/data.txt" : {...}
+    // }
+    this.files = {};
+
+    this.comment = null;
+
+    // Where we are in the hierarchy
+    this.root = "";
+    this.clone = function() {
+        var newObj = new JSZip();
+        for (var i in this) {
+            if (typeof this[i] !== "function") {
+                newObj[i] = this[i];
+            }
+        }
+        return newObj;
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.jszip.compressedObject" id="apidoc.element.jszip.compressedObject">
         function <span class="apidocSignatureSpan">jszip.</span>compressedObject
         <span class="apidocSignatureSpan">(compressedSize, uncompressedSize, crc32, compression, data)</span>
@@ -816,6 +969,123 @@
 
 
     <h2>
+        <a href="#apidoc.element.jszip.crc32" id="apidoc.element.jszip.crc32">
+        function <span class="apidocSignatureSpan">jszip.</span>crc32
+        <span class="apidocSignatureSpan">(input, crc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function crc32wrapper(input, crc) {
+    if (typeof input === "undefined" || !input.length) {
+        return 0;
+    }
+
+    var isArray = utils.getTypeOf(input) !== "string";
+
+    if(isArray) {
+        return crc32(crc|0, input, input.length, 0);
+    } else {
+        return crc32str(crc|0, input, input.length, 0);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jszip.external.Promise" id="apidoc.element.jszip.external.Promise">
+        function <span class="apidocSignatureSpan">jszip.</span>external.Promise
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Promise() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jszip.load" id="apidoc.element.jszip.load">
+        function <span class="apidocSignatureSpan">jszip.</span>load
+        <span class="apidocSignatureSpan">(data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (data, options) {
+    var zip = this;
+    options = utils.extend(options || {}, {
+        base64: false,
+        checkCRC32: false,
+        optimizedBinaryString: false,
+        createFolders: false,
+        decodeFileName: utf8.utf8decode
+    });
+
+    if (nodejsUtils.isNode &amp;&amp; nodejsUtils.isStream(data)) {
+        return external.Promise.reject(new Error("JSZip can't accept a stream when loading a zip file."));
+    }
+
+    return utils.prepareContent("the loaded zip file", data, true, options.optimizedBinaryString, options.base64)
+    .then(function(data) {
+        var zipEntries = new ZipEntries(options);
+        zipEntries.load(data);
+        return zipEntries;
+    }).then(function checkCRC32(zipEntries) {
+        var promises = [external.Promise.resolve(zipEntries)];
+        var files = zipEntries.files;
+        if (options.checkCRC32) {
+            for (var i = 0; i &lt; files.length; i++) {
+                promises.push(checkEntryCRC32(files[i]));
+            }
+        }
+        return external.Promise.all(promises);
+    }).then(function addFiles(results) {
+        var zipEntries = results.shift();
+        var files = zipEntries.files;
+        for (var i = 0; i &lt; files.length; i++) {
+            var input = files[i];
+            zip.file(input.fileNameStr, input.decompressed, {
+                binary: true,
+                optimizedBinaryString: true,
+                date: input.date,
+                dir: input.dir,
+                comment : input.fileCommentStr.length ? input.fileCommentStr : null,
+                unixPermissions : input.unixPermissions,
+                dosPermissions : input.dosPermissions,
+                createFolders: options.createFolders
+            });
+        }
+        if (zipEntries.zipComment.length) {
+            zip.comment = zipEntries.zipComment;
+        }
+
+        return zip;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (nodejsUtils.isNode &amp;&amp; nodejsUtils.isStream(data)) {
+    return external.Promise.reject(new Error("JSZip can't accept a stream when loading a zip file."));
+}
+
+return utils.prepareContent("the loaded zip file", data, true, options.optimizedBinaryString, options.base64)
+.then(function(data) {
+    var zipEntries = new ZipEntries(options);
+    zipEntries.<span class="apidocCodeKeywordSpan">load</span>(data);
+    return zipEntries;
+}).then(function checkCRC32(zipEntries) {
+    var promises = [external.Promise.resolve(zipEntries)];
+    var files = zipEntries.files;
+    if (options.checkCRC32) {
+        for (var i = 0; i &lt; files.length; i++) {
+            promises.push(checkEntryCRC32(files[i]));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.jszip.loadAsync" id="apidoc.element.jszip.loadAsync">
         function <span class="apidocSignatureSpan">jszip.</span>loadAsync
         <span class="apidocSignatureSpan">(content, options)</span>
@@ -826,6 +1096,37 @@
     return new JSZip().loadAsync(content, options);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jszip.toString" id="apidoc.element.jszip.toString">
+        function <span class="apidocSignatureSpan">jszip.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Transform a bytes array (or a representation) representing an UTF-8 encoded
+ * string into a javascript string.
+ * @param {Array|Uint8Array|Buffer} buf the data de decode
+ * @return {String} the decoded string.
+ */
+exports.utf8decode = function utf8decode(buf) {
+    if (support.nodebuffer) {
+        return utils.transformTo("nodebuffer", buf).<span class="apidocCodeKeywordSpan">toString</span>("utf-8"
+;);
+    }
+
+    buf = utils.transformTo(support.uint8array ? "uint8array" : "array", buf);
+
+    return buf2string(buf);
+};
+...</pre></li>
     </ul>
 
 
@@ -1202,11 +1503,75 @@ return new external.Promise(function (resolve, reject) {
 </div>
 
 <div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jszip.crc32" id="apidoc.module.jszip.crc32">module jszip.crc32</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jszip.crc32.crc32" id="apidoc.element.jszip.crc32.crc32">
+        function <span class="apidocSignatureSpan">jszip.</span>crc32
+        <span class="apidocSignatureSpan">(input, crc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function crc32wrapper(input, crc) {
+    if (typeof input === "undefined" || !input.length) {
+        return 0;
+    }
+
+    var isArray = utils.getTypeOf(input) !== "string";
+
+    if(isArray) {
+        return crc32(crc|0, input, input.length, 0);
+    } else {
+        return crc32str(crc|0, input, input.length, 0);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.jszip.external" id="apidoc.module.jszip.external">module jszip.external</a></h1>
 
 
     <h2>
         <a href="#apidoc.element.jszip.external.Promise" id="apidoc.element.jszip.external.Promise">
+        function <span class="apidocSignatureSpan">jszip.external.</span>Promise
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Promise() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Check the CRC32 of an entry.
+ * @param {ZipEntry} zipEntry the zip entry to check.
+ * @return {Promise} the result.
+ */
+function checkEntryCRC32(zipEntry) {
+return new external.<span class="apidocCodeKeywordSpan">Promise</span>(function (resolve, reject) {
+    var worker = zipEntry.decompressed.getContentWorker().pipe(new Crc32Probe());
+    worker.on("error", function (e) {
+        reject(e);
+    })
+    .on("end", function () {
+        if (worker.streamInfo.crc32 !== zipEntry.decompressed.crc32) {
+            reject(new Error("Corrupted zip : CRC32 mismatch"));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jszip.external.Promise" id="apidoc.module.jszip.external.Promise">module jszip.external.Promise</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jszip.external.Promise.Promise" id="apidoc.element.jszip.external.Promise.Promise">
         function <span class="apidocSignatureSpan">jszip.external.</span>Promise
         <span class="apidocSignatureSpan">()</span>
         </a>
@@ -1298,6 +1663,110 @@ worker.on("end", function () {
     </ul>
 
 
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jszip.load" id="apidoc.module.jszip.load">module jszip.load</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jszip.load.load" id="apidoc.element.jszip.load.load">
+        function <span class="apidocSignatureSpan">jszip.</span>load
+        <span class="apidocSignatureSpan">(data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (data, options) {
+    var zip = this;
+    options = utils.extend(options || {}, {
+        base64: false,
+        checkCRC32: false,
+        optimizedBinaryString: false,
+        createFolders: false,
+        decodeFileName: utf8.utf8decode
+    });
+
+    if (nodejsUtils.isNode &amp;&amp; nodejsUtils.isStream(data)) {
+        return external.Promise.reject(new Error("JSZip can't accept a stream when loading a zip file."));
+    }
+
+    return utils.prepareContent("the loaded zip file", data, true, options.optimizedBinaryString, options.base64)
+    .then(function(data) {
+        var zipEntries = new ZipEntries(options);
+        zipEntries.load(data);
+        return zipEntries;
+    }).then(function checkCRC32(zipEntries) {
+        var promises = [external.Promise.resolve(zipEntries)];
+        var files = zipEntries.files;
+        if (options.checkCRC32) {
+            for (var i = 0; i &lt; files.length; i++) {
+                promises.push(checkEntryCRC32(files[i]));
+            }
+        }
+        return external.Promise.all(promises);
+    }).then(function addFiles(results) {
+        var zipEntries = results.shift();
+        var files = zipEntries.files;
+        for (var i = 0; i &lt; files.length; i++) {
+            var input = files[i];
+            zip.file(input.fileNameStr, input.decompressed, {
+                binary: true,
+                optimizedBinaryString: true,
+                date: input.date,
+                dir: input.dir,
+                comment : input.fileCommentStr.length ? input.fileCommentStr : null,
+                unixPermissions : input.unixPermissions,
+                dosPermissions : input.dosPermissions,
+                createFolders: options.createFolders
+            });
+        }
+        if (zipEntries.zipComment.length) {
+            zip.comment = zipEntries.zipComment;
+        }
+
+        return zip;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (nodejsUtils.isNode &amp;&amp; nodejsUtils.isStream(data)) {
+    return external.Promise.reject(new Error("JSZip can't accept a stream when loading a zip file."));
+}
+
+return utils.prepareContent("the loaded zip file", data, true, options.optimizedBinaryString, options.base64)
+.then(function(data) {
+    var zipEntries = new ZipEntries(options);
+    zipEntries.<span class="apidocCodeKeywordSpan">load</span>(data);
+    return zipEntries;
+}).then(function checkCRC32(zipEntries) {
+    var promises = [external.Promise.resolve(zipEntries)];
+    var files = zipEntries.files;
+    if (options.checkCRC32) {
+        for (var i = 0; i &lt; files.length; i++) {
+            promises.push(checkEntryCRC32(files[i]));
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jszip.loadAsync" id="apidoc.module.jszip.loadAsync">module jszip.loadAsync</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jszip.loadAsync.loadAsync" id="apidoc.element.jszip.loadAsync.loadAsync">
+        function <span class="apidocSignatureSpan">jszip.</span>loadAsync
+        <span class="apidocSignatureSpan">(content, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadAsync = function (content, options) {
+    return new JSZip().loadAsync(content, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
 
 
 </div>
@@ -1399,6 +1868,40 @@ exports.utf8encode = function utf8encode(str) {
 
 
 /**
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jszip.toString" id="apidoc.module.jszip.toString">module jszip.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jszip.toString.toString" id="apidoc.element.jszip.toString.toString">
+        function <span class="apidocSignatureSpan">jszip.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Transform a bytes array (or a representation) representing an UTF-8 encoded
+ * string into a javascript string.
+ * @param {Array|Uint8Array|Buffer} buf the data de decode
+ * @return {String} the decoded string.
+ */
+exports.utf8decode = function utf8decode(buf) {
+    if (support.nodebuffer) {
+        return utils.transformTo("nodebuffer", buf).<span class="apidocCodeKeywordSpan">toString</span>("utf-8"
+;);
+    }
+
+    buf = utils.transformTo(support.uint8array ? "uint8array" : "array", buf);
+
+    return buf2string(buf);
+};
 ...</pre></li>
     </ul>
 
