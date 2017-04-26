@@ -1,6 +1,6 @@
 # npmdoc-jszip
 
-#### api documentation for  [jszip (v3.1.3)](https://github.com/Stuk/jszip#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-jszip.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jszip) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jszip.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jszip)
+#### basic api documentation for  [jszip (v3.1.3)](https://github.com/Stuk/jszip#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-jszip.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jszip) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jszip.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jszip)
 
 #### Create, read and edit .zip files with Javascript http://stuartk.com/jszip
 
@@ -106,7 +106,8 @@
         "test-browser": "grunt build && grunt test",
         "test-node": "qunit-cli -c test/helpers/test-utils.js test/helpers/node-test-utils.js test/asserts/*.js"
     },
-    "version": "3.1.3"
+    "version": "3.1.3",
+    "bin": {}
 }
 ```
 
